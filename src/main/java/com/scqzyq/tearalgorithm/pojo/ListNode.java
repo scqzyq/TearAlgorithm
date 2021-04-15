@@ -1,5 +1,7 @@
 package com.scqzyq.tearalgorithm.pojo;
 
+import java.util.Objects;
+
 public class ListNode {
 
     public int val;
@@ -32,6 +34,13 @@ public class ListNode {
             listNode = head;
         }
         return listNode;
+    }
+
+    public static void printListNode(ListNode head) {
+        while (Objects.nonNull(head.next)) {
+            System.out.println(head.val);
+            head = head.next;
+        }
     }
 }
 

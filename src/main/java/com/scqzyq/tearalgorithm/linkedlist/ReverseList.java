@@ -5,12 +5,19 @@ import com.scqzyq.tearalgorithm.pojo.ListNode;
 import java.util.Objects;
 import java.util.Scanner;
 
+/**
+ * @Description: 单链表翻转 LeetCode 206
+ * @Author 盛春强
+ * @Date 2021/4/15 16:37
+ */
+
 public class ReverseList {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         String listString = scanner.next();
         ListNode head = ListNode.string2ListNode(listString);
         ListNode node = reverseList(head);
+        ListNode.printListNode(node);
     }
 
     public static ListNode reverseList(ListNode head) {

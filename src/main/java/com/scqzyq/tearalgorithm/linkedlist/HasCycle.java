@@ -2,12 +2,29 @@ package com.scqzyq.tearalgorithm.linkedlist;
 
 import com.scqzyq.tearalgorithm.pojo.ListNode;
 
-public class HasCycle {
-    public static void main(String[] args) {
+import java.util.Objects;
 
-    }
+/**
+ * @Description: 单链表判断是否有环 LeetCode 141
+ * @Author 盛春强
+ * @Date 2021/4/15 16:37
+ */
+
+public class HasCycle {
 
     public static boolean hasCycle(ListNode head) {
-        return true;
+        if (Objects.isNull(head)) {
+            return false;
+        }
+        ListNode slow = head;
+        ListNode fast = head.next;
+        while (Objects.nonNull(fast) && Objects.nonNull(fast.next)) {
+            if (slow == fast) {
+                return true;
+            }
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+        return false;
     }
 }
