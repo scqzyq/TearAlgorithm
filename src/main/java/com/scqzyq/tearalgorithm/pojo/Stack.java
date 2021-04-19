@@ -6,8 +6,8 @@ package com.scqzyq.tearalgorithm.pojo;
  * @Date: 2021/4/16 17:08
  */
 public class Stack {
+    private int[] items;
 
-    int val;
     public void push(int val) {
 
     }
@@ -17,6 +17,6 @@ public class Stack {
     }
 
     public int top() {
-        return val;
+        return 1;
     }
 }
