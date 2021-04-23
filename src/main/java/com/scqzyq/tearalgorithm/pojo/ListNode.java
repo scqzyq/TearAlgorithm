@@ -37,7 +37,7 @@ public class ListNode {
     }
 
     public static void printListNode(ListNode head) {
-        while (Objects.nonNull(head.next)) {
+        while (Objects.nonNull(head)) {
             System.out.println(head.val);
             head = head.next;
         }
