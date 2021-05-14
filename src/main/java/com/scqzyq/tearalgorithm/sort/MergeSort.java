@@ -23,40 +23,40 @@ public class MergeSort {
         sort(ranArr, 0, ranArr.length - 1, new int[ranArr.length]);
     }
 
-    private static void sort(int[] ranArr, int left, int right, int[] finalArr) {
+    private static void sort(int[] ranArr, int left, int right, int[] tmp) {
         if (left < right) {
             int mid = (left + right) / 2;
-            sort(ranArr, left, mid, finalArr);
-            sort(ranArr, mid + 1, right, finalArr);
-            merge(ranArr, left, mid, right, finalArr);
+            sort(ranArr, left, mid, tmp);
+            sort(ranArr, mid + 1, right, tmp);
+            merge(ranArr, left, mid, right, tmp);
         }
     }
 
-    private static void merge(int[] ranArr, int left, int mid, int right, int[] finalArr) {
+    private static void merge(int[] ranArr, int left, int mid, int right, int[] tmp) {
         int i = left;
         int j = mid + 1;
         int k = 0;
 //        // 方便分析
-//        finalArr = new int[right-left+1];
+//        tmp = new int[right-left+1];
         while (i <= mid && j <= right) {
             if (ranArr[i] <= ranArr[j]) {
-                finalArr[k++] = ranArr[i++];
+                tmp[k++] = ranArr[i++];
             } else {
-                finalArr[k++] = ranArr[j++];
+                tmp[k++] = ranArr[j++];
             }
         }
         while (i <= mid) {
-            finalArr[k++] = ranArr[i++];
+            tmp[k++] = ranArr[i++];
         }
         while (j <= right) {
-            finalArr[k++] = ranArr[j++];
+            tmp[k++] = ranArr[j++];
         }
         k = 0;
         while (left <= right) {
-            ranArr[left++] = finalArr[k++];
+            ranArr[left++] = tmp[k++];
         }
         System.out.println("__________________");
-        System.out.println(Arrays.toString(finalArr));
+        System.out.println(Arrays.toString(tmp));
         System.out.println(Arrays.toString(ranArr));
     }
 }

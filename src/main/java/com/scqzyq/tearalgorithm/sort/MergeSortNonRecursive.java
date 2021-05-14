@@ -20,5 +20,18 @@ public class MergeSortNonRecursive {
     }
 
     private static void mergeSortNonRecursive(int[] ranArr) {
+        int len = ranArr.length;
+        int step = 1;
+        int[] tmp = new int[len];
+        while (step < len) {
+            for (int i = step - 1; i < len; i += step) {
+                merge(ranArr, i, (i + step) / 2, i + step, tmp);
+            }
+            step *= 2;
+        }
+    }
+
+    private static void merge(int[] ranArr, int left, int mid, int right, int[] tmp) {
+
     }
 }
