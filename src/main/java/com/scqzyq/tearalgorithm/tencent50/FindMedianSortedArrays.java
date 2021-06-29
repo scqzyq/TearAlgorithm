@@ -1,4 +1,4 @@
-package com.scqzyq.tearalgorithm.other;
+package com.scqzyq.tearalgorithm.tencent50;
 
 public class FindMedianSortedArrays {
 
