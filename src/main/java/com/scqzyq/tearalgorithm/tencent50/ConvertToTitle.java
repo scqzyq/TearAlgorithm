@@ -1,5 +1,10 @@
 package com.scqzyq.tearalgorithm.tencent50;
 
+/**
+ * @Description: 寻找两个正序数组的中位数 LeetCode 4
+ * @Author 盛春强
+ * @Date 2021/6/30 9:59
+ */
 public class ConvertToTitle {
 
     public static String convertToTitle(int columnNumber) {

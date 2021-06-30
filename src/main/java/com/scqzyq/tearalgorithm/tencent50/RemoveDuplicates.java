@@ -1,5 +1,10 @@
 package com.scqzyq.tearalgorithm.tencent50;
 
+/**
+ * @Description: 删除有序数组中的重复项 LeetCode 26
+ * @Author 盛春强
+ * @Date 2021/6/30 9:59
+ */
 public class RemoveDuplicates {
     public static int removeDuplicates(int[] nums) {
         if (nums.length<2) {

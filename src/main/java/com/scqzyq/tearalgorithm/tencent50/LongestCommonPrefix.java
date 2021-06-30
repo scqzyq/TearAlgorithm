@@ -1,5 +1,10 @@
 package com.scqzyq.tearalgorithm.tencent50;
 
+/**
+ * @Description: 最长公共前缀 LeetCode 14
+ * @Author 盛春强
+ * @Date 2021/6/30 9:59
+ */
 public class LongestCommonPrefix {
     public static String longestCommonPrefix(String[] strs) {
         if (strs.length == 0) {

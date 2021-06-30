@@ -1,5 +1,10 @@
 package com.scqzyq.tearalgorithm.tencent50;
 
+/**
+ * @Description: 整数反转 LeetCode 9
+ * @Author 盛春强
+ * @Date 2021/6/30 9:59
+ */
 public class IsPalindrome {
     public boolean isPalindrome(int x) {
         if (x < 0) {
