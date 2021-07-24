@@ -27,4 +27,20 @@ public class HasCycle {
         }
         return false;
     }
+
+    public static boolean hasCycle1(ListNode head) {
+        if (Objects.isNull(head)) {
+            return false;
+        }
+        ListNode oneStep = head;
+        ListNode twoStep = head.next;
+        while (Objects.nonNull(twoStep) && Objects.nonNull(twoStep.next)) {
+            if (oneStep == twoStep) {
+                return true;
+            }
+            oneStep = oneStep.next;
+            twoStep = twoStep.next.next;
+        }
+        return false;
+    }
 }

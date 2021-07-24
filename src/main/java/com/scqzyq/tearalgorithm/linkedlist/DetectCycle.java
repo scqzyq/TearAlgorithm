@@ -28,4 +28,33 @@ public class DetectCycle {
         }
         return null;
     }
+
+    public ListNode detectCycle1(ListNode head) {
+        ListNode fast = head;
+        ListNode slow = head;
+        while (true) {
+            if (Objects.isNull(fast) || Objects.isNull(fast.next)) {
+                return null;
+            }
+            slow = slow.next;
+            fast = fast.next.next;
+            if (fast == slow) {
+                break;
+            }
+        }
+        fast = head;
+        while (fast != slow) {
+            fast = fast.next;
+            slow = slow.next;
+        }
+        return slow;
+    }
+
+    public static void main(String[] args) {
+        ListNode l1 = new ListNode(1);
+        l1.next = new ListNode(2);
+        DetectCycle detectCycle = new DetectCycle();
+        ListNode node = detectCycle.detectCycle1(l1);
+        ListNode.printListNode(node);
+    }
 }

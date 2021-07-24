@@ -9,7 +9,7 @@ import java.util.HashMap;
  */
 public class LRUCache {
 
-    class ListNode {
+    private class ListNode {
 
         public int key,val;
         public ListNode next, prev;

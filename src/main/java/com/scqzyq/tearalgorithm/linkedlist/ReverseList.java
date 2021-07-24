@@ -33,4 +33,17 @@ public class ReverseList {
         return pre;
     }
 
+    public static ListNode reverseList1(ListNode head) {
+        ListNode node = head;
+        ListNode pre = null;
+        ListNode next;
+        while (Objects.nonNull(node)) {
+            next = node.next;
+            node.next = pre;
+            pre = node;
+            node = next;
+        }
+        return pre;
+    }
+
 }
