@@ -1,4 +1,4 @@
-package com.scqzyq.tearalgorithm.geek;
+package com.scqzyq.tearalgorithm.geek.lesson03;
 
 /**
  * @Description: 283. 移动零

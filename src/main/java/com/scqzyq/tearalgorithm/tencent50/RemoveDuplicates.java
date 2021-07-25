@@ -7,7 +7,7 @@ package com.scqzyq.tearalgorithm.tencent50;
  */
 public class RemoveDuplicates {
     public static int removeDuplicates(int[] nums) {
-        if (nums.length<2) {
+        if (nums.length < 2) {
             return nums.length;
         }
         int count = 0;
@@ -25,5 +25,15 @@ public class RemoveDuplicates {
         for (int anInt : ints) {
             System.out.println(anInt);
         }
+    }
+
+    public static int removeDuplicates1(int[] nums) {
+        int index = 1;
+        for (int i = 0; i < nums.length; i++) {
+            if (i > 0 && nums[i] != nums[i - 1] ) {
+                nums[index++] = nums[i];
+            }
+        }
+        return index;
     }
 }

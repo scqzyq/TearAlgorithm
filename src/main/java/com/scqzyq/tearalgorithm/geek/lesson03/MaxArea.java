@@ -1,4 +1,4 @@
-package com.scqzyq.tearalgorithm.geek;
+package com.scqzyq.tearalgorithm.geek.lesson03;
 
 /**
  * @Description: 11. 盛最多水的容器

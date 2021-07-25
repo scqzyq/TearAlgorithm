@@ -1,4 +1,4 @@
-package com.scqzyq.tearalgorithm.geek;
+package com.scqzyq.tearalgorithm.geek.lesson03;
 
 import java.util.ArrayList;
 import java.util.Arrays;
