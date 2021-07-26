@@ -17,46 +17,36 @@ public class MergeSort {
         }
         System.out.println(Arrays.toString(ranArr));
         mergeSort(ranArr);
+        System.out.println(Arrays.toString(ranArr));
     }
 
     private static void mergeSort(int[] ranArr) {
         sort(ranArr, 0, ranArr.length - 1, new int[ranArr.length]);
     }
 
-    private static void sort(int[] ranArr, int left, int right, int[] tmp) {
-        if (left < right) {
-            int mid = (left + right) / 2;
-            sort(ranArr, left, mid, tmp);
-            sort(ranArr, mid + 1, right, tmp);
-            merge(ranArr, left, mid, right, tmp);
+    private static void sort(int[] nums, int left, int right, int[] tmp) {
+        if (left >= right) {
+            return;
         }
+        int mid = left + (right - left) / 2;
+        sort(nums, left, mid, tmp);
+        sort(nums, mid + 1, right, tmp);
+        merge(nums, left, mid, right, tmp);
     }
 
-    private static void merge(int[] ranArr, int left, int mid, int right, int[] tmp) {
-        int i = left;
-        int j = mid + 1;
-        int k = 0;
-//        // 方便分析
-//        tmp = new int[right-left+1];
+    private static void merge(int[] nums, int left, int mid, int right, int[] tmp) {
+        int i = left, j = mid + 1, k = 0;
         while (i <= mid && j <= right) {
-            if (ranArr[i] <= ranArr[j]) {
-                tmp[k++] = ranArr[i++];
-            } else {
-                tmp[k++] = ranArr[j++];
-            }
+            tmp[k++] = nums[i] < nums[j] ? nums[i++] : nums[j++];
         }
         while (i <= mid) {
-            tmp[k++] = ranArr[i++];
+            tmp[k++] = nums[i++];
         }
         while (j <= right) {
-            tmp[k++] = ranArr[j++];
+            tmp[k++] = nums[j++];
         }
-        k = 0;
-        while (left <= right) {
-            ranArr[left++] = tmp[k++];
+        for (int p = 0; p < (right - left + 1); p++) {
+            nums[left + p] = tmp[p];
         }
-        System.out.println("__________________");
-        System.out.println(Arrays.toString(tmp));
-        System.out.println(Arrays.toString(ranArr));
     }
 }
