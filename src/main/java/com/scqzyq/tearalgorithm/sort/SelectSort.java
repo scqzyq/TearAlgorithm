@@ -34,4 +34,21 @@ public class SelectSort {
             System.out.println(Arrays.toString(ranArr));
         }
     }
+
+    private static void selectSort1(int[] ranArr) {
+        for (int i = 0; i < ranArr.length; i++) {
+            int min = ranArr[i];
+            int l = i;
+            for (int j = i+1; j < ranArr.length; j++) {
+                if (ranArr[j]<min) {
+                    min = ranArr[j];
+                    l = j;
+                }
+            }
+            if (l!=i) {
+                ranArr[l] = ranArr[i];
+                ranArr[i] = min;
+            }
+        }
+    }
 }

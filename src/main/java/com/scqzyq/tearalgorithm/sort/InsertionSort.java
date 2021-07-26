@@ -17,7 +17,7 @@ public class InsertionSort {
             ranArr[i] = RandomUtils.nextInt(1, 20);
         }
         System.out.println(Arrays.toString(ranArr));
-        insertionSort(ranArr);
+        insertionSort1(ranArr);
     }
 
     private static void insertionSort(int[] ranArr) {
@@ -35,4 +35,21 @@ public class InsertionSort {
             System.out.println(Arrays.toString(ranArr));
         }
     }
+
+    private static void insertionSort1(int[] nums) {
+        // 插入排序
+        for (int i = 1; i < nums.length; i++) {
+            int value = nums[i];
+            int j = i - 1;
+            for (; j >= 0; j--) {
+                if (value < nums[j]) {
+                    nums[j + 1] = nums[j];
+                } else {
+                    break;
+                }
+            }
+            nums[j + 1] = value;
+        }
+    }
+
 }
