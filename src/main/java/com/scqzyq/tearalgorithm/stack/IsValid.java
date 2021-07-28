@@ -1,5 +1,7 @@
 package com.scqzyq.tearalgorithm.stack;
 
+import java.util.ArrayDeque;
+import java.util.Deque;
 import java.util.Stack;
 
 /**
@@ -47,5 +49,29 @@ public class IsValid {
             }
         }
         return stack.empty();
+    }
+
+    public static boolean isValid1(String s) {
+        Deque<Character> deque = new ArrayDeque<>();
+        char[] chars = s.toCharArray();
+        for (char aChar : chars) {
+            if (aChar == '(' || aChar == '[' || aChar == '{') {
+                deque.push(aChar);
+            } else {
+                if (deque.isEmpty()) {
+                    return false;
+                }
+                if (aChar == ')' && deque.pop() != '(') {
+                    return false;
+                }
+                if (aChar == ']' && deque.pop() != '[') {
+                    return false;
+                }
+                if (aChar == '}' && deque.pop() != '{') {
+                    return false;
+                }
+            }
+        }
+        return deque.isEmpty();
     }
 }

@@ -1,6 +1,8 @@
 package com.scqzyq.tearalgorithm.stack;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 /**
  * @Description: 最小栈 LeetCode 155
@@ -66,6 +68,41 @@ class Test {
         minStack.pop();
 //        minStack.top();      // 返回 0.
         minStack.getMin();   // 返回 -2.
+    }
+}
+
+class MinStack1 {
+
+    /** initialize your data structure here. */
+    public MinStack1() {
+        data = new ArrayList<>();
+        min = new ArrayList<>();
+        min.add(Integer.MAX_VALUE);
+    }
+
+    private List<Integer> data;
+    private List<Integer> min;
+
+    public void push(int val) {
+        data.add(val);
+        if (val<=min.get(min.size()-1)) {
+            min.add(val);
+        }
+    }
+
+    public void pop() {
+        Integer remove = data.remove(data.size() - 1);
+        if (remove.equals(min.get(min.size() - 1))) {
+            min.remove(min.size() - 1);
+        }
+    }
+
+    public int top() {
+        return data.get(data.size() - 1);
+    }
+
+    public int getMin() {
+        return min.get(min.size() - 1);
     }
 }
 
