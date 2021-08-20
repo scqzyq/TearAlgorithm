@@ -45,11 +45,11 @@ public class IsSubtree {
             if (Objects.isNull(pRight) ^ Objects.isNull(qRight)) {
                 return false;
             }
-            if (Objects.nonNull(pLeft) && Objects.nonNull(qLeft)) {
+            if (Objects.nonNull(pLeft)) {
                 pQueue.offer(pLeft);
                 qQueue.offer(qLeft);
             }
-            if (Objects.nonNull(pRight) && Objects.nonNull(qRight)) {
+            if (Objects.nonNull(pRight)) {
                 pQueue.offer(pRight);
                 qQueue.offer(qRight);
             }
